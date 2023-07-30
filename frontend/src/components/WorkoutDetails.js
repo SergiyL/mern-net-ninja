@@ -1,4 +1,7 @@
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+import DeleteIcon from '@mui/icons-material/Delete';
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import { uk } from 'date-fns/locale';
 
 const WorkoutDetails = ({workout}) => {
     const {dispatch} = useWorkoutsContext()
@@ -19,8 +22,8 @@ const WorkoutDetails = ({workout}) => {
             <h4>{workout.title}</h4>
             <p><strong>Навантаження (кг): </strong>{workout.load}</p>
             <p><strong>Повторень: </strong>{workout.reps}</p>
-            <p>{workout.createdAt}</p>
-            <span onClick={handleClick}>видалити</span>
+            <p>додано {formatDistanceToNow(new Date(workout.createdAt), { locale: uk, addSuffix: true })}</p>
+            <span onClick={handleClick}><DeleteIcon/></span>            
         </div>
     )
 }

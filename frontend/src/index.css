@@ -31,6 +31,7 @@ header a {
   padding: 20px;
   margin: 0 auto;
 }
+
 /* homepage */
 .home {
   display: grid;
@@ -60,7 +61,6 @@ header a {
   top: 20px;
   right: 20px;
   cursor: pointer;
-  background: #f1f1f1;
   padding: 6px;
   border-radius: 50%;
   color: #333;
@@ -96,3 +96,7 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
+input.error {
+  border: 1px solid var(--error);
+}
+
